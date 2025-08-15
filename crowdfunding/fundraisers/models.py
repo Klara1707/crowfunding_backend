@@ -7,4 +7,4 @@ class Fundraiser(models.Model):
  goal = models.IntegerField()
  image = models.URLField()
  is_open = models.BooleanField()
- date_created = models.DateTimeField(auto_now_add=True)# Create your models here.
+ date_created = models.DateTimeField(auto_now_add=True) 
