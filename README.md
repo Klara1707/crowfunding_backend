@@ -10,23 +10,40 @@ To make editing tables in Markdown easier, you might enjoy [the Markdown All-In-
 
 ```markdown
 # Crowdfunding Back End
-{{ your name here }}
+{{ Klara van den Burg }}
 
 ## Planning:
 ### Concept/Name
-{{ Include a short description of your website concept here. }}
+{{ The Happy Crab Initiative }}
 
 ### Intended Audience/User Stories
-{{ Who are your intended audience? How will they use the website? }}
+{{ Being a hermit crab in modern life isn’t easy.
+People think we’re content just living in a bit of sand inside a glass tank—but we dream bigger!
+
+We hermit crabs are seizing this moment to raise funds for the essential supplies we need to thrive. From cozy shells to nutritious snacks, every little bit helps us live our best crabby lives.
+
+So we’re calling on all hermit crab supporters:
+Help us build the ultimate crab haven—a place to grow, scuttle, and live happily ever after. }}
 
 ### Front End Pages/Functionality
 - {{ A page on the front end }}
-    - {{ A list of dot-points showing functionality is available on this page }}
-    - {{ etc }}
-    - {{ etc }}
+    - {{ menu to navigate the site }}
+    - {{ log in option }}
+    - {{ back to top botton}}
+    - {{ crab profiles you can click in to for more information }}
+    - {{ links to social media }}
+    - {{ money meter how much raised }}
+    - {{ money meter how much to go }}
+    search page
+    search specific fundraiser
+display fundraiser
+show all inforamtion from fundraiser
+
 - {{ A second page available on the front end }}
-    - {{ Another list of dot-points showing functionality }}
-    - {{ etc }}
+    - {{ induvitual crab profiles }}
+    - {{ option to pleg money}}
+    - {{ money meter how much raised }}
+    - {{ what the crab is raising money for }}
 
 ### API Spec
 {{ Fill out the table below to define your endpoints. An example of what this might look like is shown at the bottom of the page. 
@@ -37,8 +54,12 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 
 | URL | HTTP Method | Purpose | Request Body | Success Response Code | Authentication/Authorisation |
 | /fundraisers | fetch  all the fundraisers |Get | N/A| 200 | non | ---------------------------- |
-| /fundraisers| create a new fundraiser      | post   | Jason Payload    | 201      | any log in user    |
+| /fundraisers| create a new fundraiser      | post   | Json Payload    | 201      | Any logged in user    |
+|/fundraisers/1/|
+|/pledges/ | Fetch all  the pledges | Get | N/A | 200 | 
+|/pledges/ |Creating a new pledge for a fundraiser |Post | Json payload | 201 |Any logged in user 
 
 ### DB Schema
 ![]( {{ ./relative/path/to/your/schema/image.png }} )
+![](./database.drawio.svg)
 ```backend
