@@ -31,7 +31,6 @@ class FundraiserDetail(APIView):
     permission_classes = [
         permissions.IsAuthenticatedOrReadOnly,
         IsownerOrReadOnly
-
     ]
 
     def get_object(self, pk):
