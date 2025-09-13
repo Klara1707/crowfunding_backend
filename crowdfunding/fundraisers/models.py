@@ -1,4 +1,5 @@
 from django.db import models
+from rest_framework import permissions
 from django.contrib.auth import get_user_model
 
 # Create your models here.
@@ -24,8 +25,18 @@ class Pledge(models.Model):
       related_name='pledges', 
       on_delete=models.CASCADE
    )
-   supporter = models.ForeignKey(
+   owner = models.ForeignKey(
       get_user_model(),
       related_name='pledges', 
       on_delete=models.CASCADE
    )
+
+class IsOwnerOrReadOnly(permissions.BasePermission):
+
+   def has_object_permission(self, request, view, obj):
+      # Allow read-only access for any request
+      if request.method in permissions.SAFE_METHODS:
+         return True
+      # Only allow write access if the user is the owner
+      return obj.owner == request.user
+

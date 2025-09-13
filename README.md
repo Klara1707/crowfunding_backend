@@ -11,6 +11,7 @@ To make editing tables in Markdown easier, you might enjoy [the Markdown All-In-
 ```markdown
 # Crowdfunding Back End
 {{ Klara van den Burg }}
+{{ https://the-happy-crab-initiative-23df300e577e.herokuapp.com/fundraisers/}}
 
 ## Planning:
 ### Concept/Name
@@ -29,21 +30,26 @@ Help us build the ultimate crab haven—a place to grow, scuttle, and live happi
 - {{ A page on the front end }}
     - {{ menu to navigate the site }}
     - {{ log in option }}
-    - {{ back to top botton}}
+    - {{ search page profile}}
+    - {{ search fund raiser }}
+    - {{ Welcom text }}
     - {{ crab profiles you can click in to for more information }}
-    - {{ links to social media }}
-    - {{ money meter how much raised }}
-    - {{ money meter how much to go }}
-    search page
-    search specific fundraiser
-display fundraiser
-show all inforamtion from fundraiser
+    - {{ crab photo }}
+    - {{ what the crab is raising money for, one sentance }}
+    - {{ pledges under each crab}}
+    - {{ pop up window when pledging with thank you}}
+    - {{ meter total money raised under each crab}}
 
 - {{ A second page available on the front end }}
     - {{ induvitual crab profiles }}
+    - {{ crab photo in profile}}
+    - {{ photo of what is being fundraised for}}
+    - {{ option to create fundraiser for crab }}
     - {{ option to pleg money}}
     - {{ money meter how much raised }}
     - {{ what the crab is raising money for }}
+    - {{ pop up window when pledging with thank you}}
+    - {{ pop up window when creating a pledge with thank you}}
 
 ### API Spec
 {{ Fill out the table below to define your endpoints. An example of what this might look like is shown at the bottom of the page. 
@@ -52,14 +58,27 @@ It might look messy here in the PDF, but once it's rendered it looks very neat!
 
 It can be helpful to keep the markdown preview open in VS Code so that you can see what you're typing more easily. }}
 
-| URL | HTTP Method | Purpose | Request Body | Success Response Code | Authentication/Authorisation |
-| /fundraisers | fetch  all the fundraisers |Get | N/A| 200 | non | ---------------------------- |
-| /fundraisers| create a new fundraiser      | post   | Json Payload    | 201      | Any logged in user    |
-|/fundraisers/1/|
-|/pledges/ | Fetch all  the pledges | Get | N/A | 200 | 
-|/pledges/ |Creating a new pledge for a fundraiser |Post | Json payload | 201 |Any logged in user 
+| URL             | HTTP | Purpose                   | Request Body | Success Response Code | Authentication/Authorisation |
+| --------------- | ---- | ------------------------- | ------------ | --------------------- | ---------------------------- |
+| /fundraisers/   | GET  | Fetch all fundraisers | N/A                    | 200             | Required (Token)                        |
+| /fundraisers/   | POST | 	Create a new fundraiser   | JSON Payload      | 201             | Required (Token)           |
+| /fundraisers/<id>/ |   GET   | Fetch a specific fundraiser        | N/A|  200             | Required (Token)                            |
+| /fundraiser/<id>/   | PUT| Update a fundraiser    | JSON Payload        | 200              | Required (owner only)                           |
+| /fundraiser/<id>/    | DELETE  |Delete a fundraiser    | N/A          | 204                | Required (owner only)                       |
+
+| /user/          | GET  | Fetch all users| JSON payload    | N/A           | 200         | Any logged in user
+| /user/          | POST | Create a new user                | JSON payload  | 201         |         None                     |
+|/user/<id>/           | GET  | Fetch details of a specific user | N/A           | 200         |      Required (Token)       |
+| /user/token-auth/          | POST | Authenticate user and get token  | JSON payload  | 200         |      None                      |
+
+| /pledges/       | GET | Fetch all pledges | N/A | 200                  | Required (Token)           |
+| /pledges/       | POST  | Create a new pledge               | JSON payload          | 201                   | Required (Token)                            |
+| /pledges/<id>/      | GET | Fetch a specific pledge| N/A | 200                   | Required (Token)          |
+| /pledges/<id>/       | PUT | Update a pledge | JSON payload| 200                   | Required (supporter only)         |
+| /pledges/<id>/       | DELETE | 	Delete a pledge | N/A | 204                   | Required (supporter only)           |
 
 ### DB Schema
-![]( {{ ./relative/path/to/your/schema/image.png }} )
-![](./database.drawio.svg)
+![]( {{ crowdfunding\crowdfunding\img\Happ_crab_wireframe_popup.png }} )
+![]( {{ crowdfunding\crowdfunding\img\Happ_crab_wireframe.png }} )
+![]( {{ database.drawio.svg }} )
 ```backend
