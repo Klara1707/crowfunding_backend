@@ -25,8 +25,14 @@ class FundraiserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
 class FundraiserDetailSerializer(FundraiserSerializer):
     pledges = PledgeSerializer(many=True, read_only=True)
 
-    class Meta(FundraiserSerializer.Meta):
-        fields = FundraiserSerializer.Meta.fields + ['pledges']
+    class Meta:
+        model = Fundraiser
+        fields = [
+            'id', 'title', 'description', 'goal', 'image',
+            'is_open', 'date_created', 'owner', 'pledges'
+        ]
+
