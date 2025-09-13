@@ -78,7 +78,20 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 | /pledges/<id>/       | DELETE | 	Delete a pledge | N/A | 204                   | Required (supporter only)           |
 
 ### DB Schema
-![]( {{ crowdfunding\crowdfunding\img\Happ_crab_wireframe_popup.png }} )
-![]( {{ crowdfunding\crowdfunding\img\Happ_crab_wireframe.png }} )
-![]( {{ database.drawio.svg }} )
+![wireframe_popup]( {{ crowdfunding\crowdfunding\img\Happ_crab_wireframe_popup.png }} )
+![wirefram_mainpage]( {{ crowdfunding\crowdfunding\img\Happ_crab_wireframe.png }} )
+![fundraiser_all_fundraisers]( {{ database.drawio.svg }} )
+![fundraiser_create_new]( {{ database.drawio.svg }} )
+![fundraiser_fetch_specific]( {{ database.drawio.svg }} )
+![fudraiser_update]( {{ database.drawio.svg }} )
+![fundraiser_delete]( {{ database.drawio.svg }} )
+![user_fetch_all]( {{ database.drawio.svg }} )
+![user_create_new]( {{ database.drawio.svg }} )
+![user_detail_one_user]( {{ database.drawio.svg }} )
+![user_authenticate_user_get_token]( {{ database.drawio.svg }} )
+![pledges_fetch_all]( {{ database.drawio.svg }} )
+![pledges_create_new]( {{ database.drawio.svg }} )
+![pledges_fetch_specific_pledge]( {{ database.drawio.svg }} )
+![pledges_update_pledge]( {{ database.drawio.svg }} )
+![pledges_delete_pledge]( {{ database.drawio.svg }} )
 ```backend
