@@ -64,7 +64,7 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 | /fundraisers/<id>/ | GET    | Fetch a specific fundraiser      | N/A          | 200                   | Required (Token)             |
 | /fundraiser/<id>/  | PUT    | Update a fundraiser              | JSON Payload | 200                   | Required (owner only)        |
 | /fundraiser/<id>/  | DELETE | Delete a fundraiser              | N/A          | 204                   | Required (owner only)        |
-| /user/             | GET    | Fetch all users                  | JSON payload | N/A                   | 200                          | Any logged in user |
+| /user/             | GET    | Fetch all users                  | JSON payload | 200                   | Any logged in user           |
 | /user/             | POST   | Create a new user                | JSON payload | 201                   | None                         |
 | /user/<id>/        | GET    | Fetch details of a specific user | N/A          | 200                   | Required (Token)             |
 | /user/token-auth/  | POST   | Authenticate user and get token  | JSON payload | 200                   | None                         |
@@ -77,18 +77,9 @@ It can be helpful to keep the markdown preview open in VS Code so that you can s
 ### DB Schema
 ![wireframe_popup]( img\Happ_crab_wireframe_popup.png)
 ![wirefram_mainpage]( img\Happ_crab_wireframe.png)
-![fundraiser_all_fundraisers](  database.drawio.svg)
-![fundraiser_create_new]( {{ database.drawio.svg }} )
-![fundraiser_fetch_specific]( {{ database.drawio.svg }} )
-![fudraiser_update]( {{ database.drawio.svg }} )
-![fundraiser_delete]( {{ database.drawio.svg }} )
-![user_fetch_all]( {{ database.drawio.svg }} )
-![user_create_new]( {{ database.drawio.svg }} )
-![user_detail_one_user]( {{ database.drawio.svg }} )
-![user_authenticate_user_get_token]( {{ img\post_user_token.png }} )
-![pledges_fetch_all]( {{ database.drawio.svg }} )
-![pledges_create_new]( {{ database.drawio.svg }} )
-![pledges_fetch_specific_pledge]( {{ database.drawio.svg }} )
-![pledges_update_pledge]( {{ database.drawio.svg }} )
-![pledges_delete_pledge]( {{ database.drawio.svg }} )
+![fundraiser_all_fundraisers](img\fundraiser_all_fundraisers.png)
+![fundraiser_create_new](img\fundraiser_create_new.png)
+![fundraiser_fetch_specific](img\fundraiser_fetch_specific.png)
+![user_authenticate_user_get_token](img\user_authenticate_user_get_token.png)
+
 ```backend
